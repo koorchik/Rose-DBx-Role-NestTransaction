@@ -16,6 +16,7 @@ provides:
     file: lib/Rose/DBx/Role/NestTransaction.pm
     version: 0.01
 requires:
+  Role::Tiny: 0
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
