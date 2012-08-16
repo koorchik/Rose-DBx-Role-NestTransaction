@@ -1,0 +1,22 @@
+---
+abstract: 'Nested transactions support for Rose::DB::Object'
+author:
+  - 'Viktor Turskyi <koorchik@cpan.org>'
+build_requires:
+  Test::More: 0
+dynamic_config: 0
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Rose-DBx-Role-NestTransaction
+provides:
+  Rose::DBx::Role::NestTransaction:
+    file: lib/Rose/DBx/Role/NestTransaction.pm
+    version: 0.01
+requires:
+  perl: 5.006
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
