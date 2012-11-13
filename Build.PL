@@ -6,6 +6,7 @@ use Module::Build;
 my $builder = Module::Build->new(
     module_name         => 'Rose::DBx::Role::NestTransaction',
     license             => 'perl',
+    dist_abstract       => 'Nested transactions support for Rose::DB',
     dist_author         => q{Viktor Turskyi <koorchik@cpan.org>},
     dist_version_from   => 'lib/Rose/DBx/Role/NestTransaction.pm',
     build_requires => {

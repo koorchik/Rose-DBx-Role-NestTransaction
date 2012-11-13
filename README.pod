@@ -1,24 +1,3 @@
-package Rose::DBx::Role::NestTransaction;
-
-use strict;
-use warnings;
-
-use Role::Tiny;
-
-our $VERSION = '0.01';
-
-sub nest_transaction {
-    my ($self, $cb) = @_;
-    
-    if ( $self->in_transaction ) {
-        $cb->();
-    } else {
-        $self->do_transaction($cb) or die $self->error;    
-    }
-}
-
-1;
-
 =head1 NAME
 
 Rose::DBx::Role::NestTransaction - Nested transactions support for Rose::DB
@@ -66,4 +45,3 @@ by the Free Software Foundation; or the Artistic License.
 See http://dev.perl.org/licenses/ for more information.
 
 =cut
-
