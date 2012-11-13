@@ -51,7 +51,7 @@ sub nest_transaction {
     if ( $self->in_transaction ) {
         $cb->();
     } else {
-        $self->do_transaction($cb) or die BKE::DB->error;    
+        $self->do_transaction($cb) or die $self->error;    
     }
 }
 
