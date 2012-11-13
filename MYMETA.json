@@ -19,8 +19,14 @@
             "Test::More" : "0"
          }
       },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.40"
+         }
+      },
       "runtime" : {
          "requires" : {
+            "Class::Method::Modifiers" : "0",
             "Role::Tiny" : "0",
             "perl" : "5.006"
          }

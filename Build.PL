@@ -15,6 +15,7 @@ my $builder = Module::Build->new(
     requires => {
         'perl'       => 5.006,
         'Role::Tiny' => 0,
+        'Class::Method::Modifiers' => 0,
     },
     add_to_cleanup     => [ 'Rose-DBx-Role-NestTransaction-*' ],
     create_makefile_pl => 'traditional',
