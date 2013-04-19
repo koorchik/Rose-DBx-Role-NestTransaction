@@ -5,4 +5,6 @@ Revision history for Rose-DBx-Role-NestTransaction
 
 0.02
         Added missed dependency
-    
+
+0.03
+        Nest transaction always returns $self on success

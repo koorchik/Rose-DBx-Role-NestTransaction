@@ -5,16 +5,19 @@ use warnings;
 
 use Role::Tiny;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub nest_transaction {
-    my ($self, $cb) = @_;
-    
+    my $self = shift;
+    my $cb = shift;
+
     if ( $self->in_transaction ) {
-        $cb->();
+        $cb->(@_);
     } else {
-        $self->do_transaction($cb) or die $self->error;    
+        $self->do_transaction($cb, @_) or die $self->error;
     }
+
+    return 1;
 }
 
 1;
@@ -28,11 +31,11 @@ Rose::DBx::Role::NestTransaction - Nested transactions support for Rose::DB
     # Define yout DB class
     package MyDB;
     use base 'Rose::DB';
-    
+
     use Role::Tiny::With;
     with 'Rose::DBx::Role::NestTransaction';
-    
-    # Somewhere in your code  
+
+    # Somewhere in your code
     MyDB->new_or_cached->nest_transaction(sub {
         User->new( name => 'name' )->save();
     });
@@ -45,7 +48,7 @@ This module provides a role for Rose::DB. Just consume the role in your Rose::DB
 
 =head2 nest_transaction
 
-These methods behaves like do_transaction but it repects existing transactions and do not start new one if the transaction already started. On error it revert transaction and rethrow error
+These methods behaves like do_transaction but it repects existing transactions and do not start new one if the transaction already started. On error it revert transaction and rethrow error and on success it returns true
 
 =head1 AUTHOR
 
