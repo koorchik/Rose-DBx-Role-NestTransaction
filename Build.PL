@@ -19,6 +19,11 @@ my $builder = Module::Build->new(
     },
     add_to_cleanup     => [ 'Rose-DBx-Role-NestTransaction-*' ],
     create_makefile_pl => 'traditional',
+    meta_merge => {
+        resources => {
+            repository => 'https://github.com/koorchik/Rose-DBx-Role-NestTransaction',
+        },
+    },
 );
 
 $builder->create_build_script();
